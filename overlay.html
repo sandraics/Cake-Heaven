@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Product Grid</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      background-color: #1f0203;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-family:'Dancing Script', cursive;;
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      text-align: center;
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay .text {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .card:hover .card-img-top {
+      transform: scale(1.1);
+    }
+
+     .logo {
+      
+      margin-left:2px;
+    }
+
+   
+
+    .logo i {
+      font-size: 40px;
+      color: chocolate;
+    }
+
+  
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    @media (max-width: 576px) {
+      .overlay .text {
+        font-size: 1.2rem;
+      }
+
+      .card {
+        height: 250px;
+      }
+
+      .logo {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo container"><a href="index.html">
+     <i class="fas fa-cheese" style="font-size:40px; color:chocolate;  margin-top:20px;"></i></a>
+   
+  </div>
+
+  <h1>OUR PRODUCTS</h1>
+
+  <div class="container">
+    <div class="row">
+      <!-- Responsive card example: col-12 on XS, col-6 on SM, col-4 on MD+ -->
+      <div class="col-12 col-sm-6 col-md-4 p-3">
+        <div class="card">
+          <img class="card-img-top" src="C:\sandra project cakeland\donut1.jpg" alt="Donut">
+          <div class="overlay">
+            <div class="text"><a href="donuts.html">Donut</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 p-3">
+        <div class="card">
+          <img class="card-img-top" src="C:\sandra project cakeland\cookies img1.jpg" alt="Cookies">
+          <div class="overlay">
+            <div class="text"><a href="cookies.html">Cookies</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 p-3">
+        <div class="card">
+          <img class="card-img-top" src="C:\sandra project cakeland\Cupcakes1.jpg" alt="Vanilla Cupcakes">
+          <div class="overlay">
+            <div class="text"><a href="cupcake.html">Cupcakes</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 p-3">
+        <div class="card">
+          <img class="card-img-top" src="C:\sandra project cakeland\teacake1.jpeg" alt="Tea cakes">
+          <div class="overlay">
+            <div class="text"><a href="teacakes.html">Tea cakes</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 p-3">
+        <div class="card">
+          <img class="card-img-top" src="C:\sandra project cakeland\desert img1.jpg" alt="Desserts">
+          <div class="overlay">
+            <div class="text"><a href="deserts.html">Desserts</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-4 p-3">
+        <div class="card">
+          <img class="card-img-top" src="C:\sandra project cakeland\brownie1.jpg" alt="Brownies">
+          <div class="overlay">
+            <div class="text"><a href="brown original.html">Brownies</a></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
