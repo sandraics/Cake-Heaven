@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Cake Order Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-image: url("deliveryimage.avif");
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 1;
+            margin: 0;
+        }
+
+        .logo {
+         
+            margin-top: 5px;
+        }
+
+      
+
+        .logo i {
+            font-size: 40px;
+            color: chocolate;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: black;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: black;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: transparent;
+        }
+
+        .button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .form-row label, .form-row select {
+            width: 48%;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .radio-group label {
+            margin-left: 10px;
+        }
+
+        /* Overlay Styles */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        #overlay-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 16px;
+            color: black;
+            font-weight: bold;
+            width: 400px;
+        }
+
+        #overlay .order-details {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin-top: 10px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            label {
+                font-size: 16px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .form-row label, .form-row select {
+                width: 100%;
+            }
+
+            .radio-group {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo i {
+                font-size: 30px;
+            }
+
+            .logotext {
+                font-size: 18px;
+            }
+
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <a href="wedding cakes.html"><i class="fas fa-cheese" style="font-size:40px; color:chocolate;"></a></i><br>
+        
+    </div>
+
+    <div class="container">
+        <h2>Cake Order Form</h2>
+        <form id="orderForm">
+            <!-- Customer Information -->
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required>
+
+            <label for="emailAddress">Email Address:</label>
+            <input type="email" id="emailAddress" name="emailAddress" required>
+
+            <!-- Cake Details (Row 1) -->
+            <div class="form-row">
+                <label for="cakeName">Cake Name:</label>
+                <select id="cakeName" name="cakeName" required>
+                    <option value="">Select a Cake</option>
+                    <option value="Vanilla Delight">Vanilla Delight</option>
+                    <option value="Chocolate Fantasy">Chocolate Cake</option>
+                    <option value="Red Velvet Dream">Red Velvet Cake</option>
+                    <option value="Rainbow">Rainbow</option>
+                    <option value="Pineapple Cake">Pineapple Cake</option>
+                    <option value="Vancho">Vancho</option>
+                    <option value="Black Forest">Black Forest</option>
+                    <option value="Strawberry">Strawberry</option>
+                    <option value="Nutty Bubble">Nutty Bubble</option>
+                    <option value="Wedding Cake">Wedding Cake</option>
+                    <option value="X-mas Cake">X-mas Cake</option>
+                    <option value="Pista Cake">Pista Cake</option>
+                    <option value="Ferrero">Ferrero Rocher cake</option>
+                    <option value="Custom">Custom (Specify Below)</option>
+                </select>
+
+                <label for="cakeSize">Cake Size:</label>
+                <select id="cakeSize" name="cakeSize" required>
+                    <option value="">Select Size</option>
+                    <option value="Small">0.5kg</option>
+                    <option value="Medium">1kg</option>
+                    <option value="Large">2kg</option>
+                    <option value="Large">3kg</option>
+                    <option value="Large">4kg</option>
+                    <option value="Custom Size">Custom Size (Please specify)</option>
+                </select>
+            </div>
+
+            <!-- Cake Type (Egg/Eggless) -->
+            <div class="radio-group">
+                <label>Type:</label>
+                <label for="egg">Egg</label>
+                <input type="radio" id="egg" name="cakeType" value="Egg" required>
+                <label for="eggless">Eggless</label>
+                <input type="radio" id="eggless" name="cakeType" value="Eggless" required>
+            </div>
+
+            <!-- Product Name and Quantity (Row 2) -->
+            <div class="form-row">
+                <label for="productName">Product Name:</label>
+                <select id="productName" name="productName" required>
+                    <option value="">Select a Product</option>
+                    <option value="Donut">Donut</option>
+                    <option value="Desserts">Desserts</option>
+                    <option value="Cupcake">Cupcake</option>
+                    <option value="Brownies">Brownies</option>
+                    <option value="Cookies">Cookies</option>
+                    <option value="Vancho">Vancho</option>
+                    <option value="Tea Cake">Tea Cake</option>
+                    <option value="Custom">Custom (Specify Below)</option>
+                </select>
+
+                <label for="quantity">Quantity:</label>
+                <select id="quantity" name="quantity" required>
+                    <option value="">Select Quantity</option>
+                    <option value="2 pieces">2 pieces</option>
+                    <option value="4 pieces">4 pieces</option>
+                    <option value="1 box (6 pieces)">1 box (6 pieces)</option>
+                    <option value="2 boxes (12 pieces)">2 boxes (12 pieces)</option>
+                    <option value="3 boxes (24 pieces)">3 boxes (24 pieces)</option>
+                    <option value="Custom">Custom (Specify Below)</option>
+                </select>
+            </div>
+
+            <label for="specialRequest">Special Requests/Design (Optional):</label>
+            <textarea id="specialRequest" name="specialRequest" rows="4" placeholder="Enter your custom design request here..."></textarea>
+
+            <label for="messageOnCake">Message on Cake (Optional):</label>
+            <input type="text" id="messageOnCake" name="messageOnCake" placeholder="Enter the message you want on the cake">
+
+            <!-- Pickup/Delivery Details -->
+            <label for="pickupDate">Pickup Date & Time:</label>
+            <input type="datetime-local" id="pickupDate" name="pickupDate" required>
+
+            <label for="deliveryAddress">Delivery Address (If applicable):</label>
+            <textarea id="deliveryAddress" name="deliveryAddress" rows="3" placeholder="Enter delivery address if required"></textarea>
+
+            <!-- Payment Information -->
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="Credit/Debit Card">Credit/Debit Card</option>
+                <option value="Cash">Cash</option>
+                <option value="Online Payment">Online Payment</option>
+            </select>
+
+              <button type="submit" class="button">Place Order</button>
+   <button type="submit" class="button">  <a href="wedding cakes.html">Cancel</a></button>
+    </form>
+
+    <!-- Overlay -->
+    <div id="overlay" onclick="off()">
+        <div id="overlay-content">
+            <div id="orderConfirmation">Order Confirmed</div>
+            <div id="orderDetails" class="order-details"></div>
+        </div>
+    </div>
+
+    <script>
+        // Show overlay with order details when the form is submitted
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the form values
+            const fullName = document.getElementById("fullName").value;
+            const phoneNumber = document.getElementById("phoneNumber").value;
+            const emailAddress = document.getElementById("emailAddress").value;
+            const cakeName = document.getElementById("cakeName").value;
+            const cakeSize = document.getElementById("cakeSize").value;
+            const cakeType = document.querySelector('input[name="cakeType"]:checked').value;
+            const productName = document.getElementById("productName").value;
+            const quantity = document.getElementById("quantity").value;
+            const specialRequest = document.getElementById("specialRequest").value;
+            const messageOnCake = document.getElementById("messageOnCake").value;
+            const pickupDate = document.getElementById("pickupDate").value;
+            const deliveryAddress = document.getElementById("deliveryAddress").value;
+            const paymentMethod = document.getElementById("paymentMethod").value;
+
+            // Prepare the order details text
+            let orderDetails = `
+                <strong>Customer Details:</strong><br>
+                Name: ${fullName}<br>
+                Phone: ${phoneNumber}<br>
+                Email: ${emailAddress}<br><br>
+
+                <strong>Cake Details:</strong><br>
+                Cake: ${cakeName}<br>
+                Size: ${cakeSize}<br>
+                Type: ${cakeType}<br><br>
+
+                <strong>Product Details:</strong><br>
+                Product: ${productName}<br>
+                Quantity: ${quantity}<br><br>
+
+                <strong>Special Requests/Design:</strong><br>
+                ${specialRequest ? specialRequest : "None"}<br><br>
+
+                <strong>Message on Cake:</strong><br>
+                ${messageOnCake ? messageOnCake : "None"}<br><br>
+
+                <strong>Pickup Date & Time:</strong><br>
+                ${pickupDate}<br><br>
+
+                <strong>Delivery Address:</strong><br>
+                ${deliveryAddress ? deliveryAddress : "Not applicable"}<br><br>
+
+                <strong>Payment Method:</strong><br>
+                ${paymentMethod}<br>
+            `;
+
+            // Display the order details in the overlay
+            document.getElementById("orderDetails").innerHTML = orderDetails;
+
+            // Display the overlay
+            document.getElementById("overlay").style.display = "flex";
+
+            // Hide the overlay after 5 seconds
+            setTimeout(function() {
+                document.getElementById("overlay").style.display = "none";
+            }, 9000);
+        });
+
+        // Hide the overlay when clicked
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+</div>
+</body>
+</html>
+
+
